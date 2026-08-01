@@ -25,6 +25,7 @@ Luego abre <http://127.0.0.1:8765/>.
 - `js/scripts.js`: menú móvil, header y animaciones progresivas.
 - `assets/img`: logotipo, imágenes y recursos gráficos.
 - `assets/img/portfolio/real-work`: destino para fotografías definitivas del portafolio.
+- `robots.txt` y `sitemap.xml`: descubrimiento básico para buscadores.
 
 ## Contenido pendiente de confirmar
 

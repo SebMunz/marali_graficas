@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sebmunz.github.io/marali_graficas/sitemap.xml
