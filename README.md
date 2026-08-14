@@ -1,44 +1,52 @@
 # Marali Gráficas
 
-Landing page estática para Marali Gráficas, imprenta y emprendimiento familiar de Villa Alemana.
+Sitio estático para Marali Gráficas, microempresa familiar de producciones gráficas de Villa Alemana.
 
-## Vista pública
+## Sitio
 
-GitHub Pages publica automáticamente la rama `main`:
+- `index.html`: landing comercial y contacto.
+- `trabajos.html`: portafolio ampliado.
+- `css/styles.css`: identidad visual y diseño responsive.
+- `js/scripts.js`: menú móvil y mejoras progresivas.
+- `assets/img/trabajos`: fotografías seleccionadas y optimizadas para web.
+- `_headers`: cabeceras de seguridad para Cloudflare Pages.
+- `404.html`: recuperación de rutas inválidas.
 
-<https://sebmunz.github.io/marali_graficas/>
+La carpeta local `FOTOS/` contiene material fuente y está excluida de Git. Solo deben publicarse derivados revisados y optimizados.
 
-## Ejecutar localmente
+## Desarrollo local
 
-No requiere instalación ni proceso de compilación. Desde la raíz del repositorio:
+No requiere instalación ni compilación:
 
 ```powershell
 python -m http.server 8765 --bind 127.0.0.1
 ```
 
-Luego abre <http://127.0.0.1:8765/>.
+Abrir <http://127.0.0.1:8765/>.
 
-## Estructura
+## Preview actual
 
-- `index.html`: contenido y estructura semántica.
-- `css/styles.css`: sistema visual y responsive.
-- `js/scripts.js`: menú móvil, header y animaciones progresivas.
-- `assets/img`: logotipo, imágenes y recursos gráficos.
-- `assets/img/portfolio/real-work`: destino para fotografías definitivas del portafolio.
-- `robots.txt` y `sitemap.xml`: descubrimiento básico para buscadores.
+GitHub Pages: <https://sebmunz.github.io/marali_graficas/>
 
-## Contenido pendiente de confirmar
+GitHub Pages se utiliza como preview del proyecto. Para publicación comercial se recomienda Cloudflare Pages.
 
-Antes de considerar la landing definitiva, validar con Marali:
+## Publicar en Cloudflare Pages
 
-- catálogo exacto de servicios y materiales;
-- historia del emprendimiento familiar;
-- imágenes de trabajos reales;
-- enlaces oficiales de redes sociales;
-- disponibilidad, cobertura, plazos y condiciones de entrega.
+1. Crear un proyecto en **Workers & Pages → Create → Pages → Import an existing Git repository**.
+2. Conectar `SebMunz/marali_graficas`.
+3. Usar rama de producción `main`.
+4. Framework preset: `None`.
+5. Build command: dejar vacío.
+6. Build output directory: `/`.
+7. Desplegar y comprobar `index.html`, `trabajos.html`, `robots.txt`, `sitemap.xml` y una ruta inexistente.
+8. Cuando exista URL definitiva, reemplazar las URLs de GitHub Pages en metadata, `robots.txt` y `sitemap.xml`.
 
-Las imágenes actuales del portafolio están identificadas visualmente como referenciales.
+Cloudflare generará previews para ramas y pull requests. Un dominio propio puede agregarse después desde **Custom domains**.
 
-## Publicación
+## Revisión antes de publicar
 
-GitHub Pages está configurado para publicar la raíz de `main`. Cada push a esa rama genera una nueva versión del sitio.
+- Confirmar teléfono, correo, redes y autorización de fotografías.
+- Revisar desktop, móvil, teclado y menú.
+- Ejecutar `node --check js/scripts.js` y `git diff --check`.
+- Comprobar que `FOTOS/` sigue ignorada.
+- Validar que canonical, Open Graph, sitemap y robots usan el dominio definitivo.

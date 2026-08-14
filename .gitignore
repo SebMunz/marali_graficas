@@ -17,6 +17,7 @@ dist/
 coverage/
 lighthouse-report.*
 npm-debug.log*
+FOTOS/
 
 # Local configuration and secrets
 .env
